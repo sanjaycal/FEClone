@@ -5,7 +5,7 @@ from playsound import playsound
 
 playsound('Soundtrack.mp3',False)
 
-bob = backend.player("2",{"speed":16,"hp":30,"damage":15,"attackRange":2},"","blue",0,[])
+bob = backend.player("2",{"speed":4,"hp":30,"damage":15,"attackRange":2},"","blue",0,[])
 bob2 = backend.player("3",{"speed":6,"hp":30,"damage":15,"attackRange":4},"","blue",0,[])
 enemy1 = backend.player("e1",{"speed":1,"hp":30,"damage":15,"attackRange":1},"","green",0,[])
 enemy2 = backend.player("e1",{"speed":1,"hp":30,"damage":15,"attackRange":1},"","green",0,[])
