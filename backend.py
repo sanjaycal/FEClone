@@ -199,7 +199,7 @@ def textboxes():
     t2.fd(15)
     t2.color("Sky Blue")
     t2.ht()
-    t2.write("To Play The Game Type Something Random If You Want To\nSee Directions Type 'R'",font=("Arial", 16, "normal"))
+    t2.write("You Just Sarted The Woke \nUp. Your Team Is\nHere Stranded With You. You Commander Told You To Infiltrate \nThe Enemy Base. Here You Are. Try t-----o e sca pe------[CONNECTION LOST]",font=("Arial", 16, "normal"))
     a=input()
     if a=="R":
         t3 = turtle.Turtle()
