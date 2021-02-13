@@ -11,7 +11,9 @@ enemy1 = backend.player("e1",{"speed":1,"hp":30,"damage":15,"attackRange":1},"",
 enemy2 = backend.player("e1",{"speed":1,"hp":30,"damage":15,"attackRange":1},"","green",0,[])
 enemy3 = backend.player("e1",{"speed":1,"hp":30,"damage":15,"attackRange":1},"","green",0,[])
 
-
+enemy4 = backend.player("e1",{"speed":1,"hp":30,"damage":15,"attackRange":1},"","green",0,[])
+enemy5 = backend.player("e1",{"speed":1,"hp":30,"damage":15,"attackRange":1},"","green",0,[])
+enemy6 = backend.player("e1",{"speed":1,"hp":30,"damage":15,"attackRange":1},"","green",0,[])
 
 
 players = [bob,bob2]
@@ -23,7 +25,12 @@ enemy2.ypos = -5
 enemy3.xpos = -5
 enemy3.ypos = -5
 
-
+enemy4.xpos = 15
+enemy4.ypos = 15
+enemy5.xpos = -15
+enemy6.ypos = -15
+enemy6.xpos = 15
+enemy6.ypos = -5
 
 enemies = [enemy1,enemy2,enemy3]
 
@@ -81,4 +88,11 @@ while True:
             enemy.turtl.clear()
             enemies.remove(enemy)
             playsound("Death.mp3")
+    count = len(enemies)
+    if count == 0:
+        print("You win!")
+        print("you get new characters!")
+        speed = random.randint(2,6)
+        players.append(backend.player("2",{"speed":speed,"hp":30,"damage": 15, "attackRange":random.randint(1,speed)},"","blue",0,[]))
+        enemies+=[enemy4.copy(),enemy5.copy(),enemy6.copy()]
 
