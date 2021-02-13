@@ -1,7 +1,6 @@
 import turtle
 import math
 import random
-from playsound import playsound
 
 tilex = 0
 tiley = 0
@@ -44,7 +43,6 @@ class player:
 
     def takeDamage(self,damage):
         self.stats["hp"] -= damage
-        playsound('Damage.mp3',False)
 
     def AImove(self,players):
         closestPlayer = 0

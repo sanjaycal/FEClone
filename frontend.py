@@ -1,9 +1,7 @@
 import backend
 import time
 import random
-from playsound import playsound
 
-playsound('Soundtrack.mp3',False)
 
 bob = backend.player("2",{"speed":4,"hp":30,"damage":15,"attackRange":2},"","blue",0,[])
 bob2 = backend.player("3",{"speed":6,"hp":30,"damage":15,"attackRange":4},"","blue",0,[])
@@ -87,7 +85,6 @@ while True:
         if enemy.stats["hp"] <=0:
             enemy.turtl.clear()
             enemies.remove(enemy)
-            playsound("Death.mp3")
     count = len(enemies)
     if count == 0:
         print("You win!")
