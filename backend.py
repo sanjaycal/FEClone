@@ -1,6 +1,24 @@
 import turtle
 import math
 import random
+import time
+
+
+s=turtle.Screen()
+
+
+t=turtle.Turtle()
+t.ht()
+s.bgcolor("black")
+t.color("White")
+t.penup()
+
+t.rt(180)
+t.fd(300)
+t.write("WARGROUNDS",font=("Impact", 100, "normal"))
+time.sleep(7)
+t.clear()
+
 
 tilex = 0
 tiley = 0
@@ -32,9 +50,9 @@ class player:
         self.turtl = turtle.Turtle()
         self.turtl.speed(0)
         self.stats["maxHP"] = self.stats["hp"]
-        
+       
 
-        
+       
     def setLocation(self,x,y):
         if x != self.xpos or y != self.ypos:
             self.turtl.clear()
@@ -43,6 +61,7 @@ class player:
 
     def takeDamage(self,damage):
         self.stats["hp"] -= damage
+       
 
     def AImove(self,players):
         closestPlayer = 0
@@ -66,7 +85,7 @@ class player:
                 newy-=self.stats["speed"]
             if newx == closestPlayer.xpos and newy == closestPlayer.ypos:
                 newy -=1
-            self.setLocation(newx,newy) 
+            self.setLocation(newx,newy)
 
     def showHealth(self):
         self.turtl.fillcolor("red")
@@ -77,7 +96,7 @@ class player:
             self.turtl.fd(5)
             self.turtl.lt(90)
         self.turtl.end_fill()
-    
+   
     def highlightMoves(self,playerList):
         lineSize = 5
         positions = []
@@ -118,7 +137,6 @@ class player:
     def displaySelf(player):
         player.turtl.color(player.color)
         player.turtl.speed(0)
-        player.turtl.penup()
         player.turtl.goto(player.xpos*boxWidth-halfBoxWidth,player.ypos*boxWidth)
         player.turtl.write(player.name)
         player.turtl.pendown()
@@ -133,9 +151,12 @@ class ability:
 
 def drawGrid():
     t = turtle.Turtle()
+    t.color("White")
     t.speed(0)
     for i in range(height):
+        t.penup()
         t.goto(width*halfBoxWidth,i*boxWidth-height*halfBoxWidth)
+        t.pendown()
         t.goto(width*halfBoxWidth,(i+1)*boxWidth-height*halfBoxWidth)
         t.goto(-width*halfBoxWidth,i*boxWidth+boxWidth-height*halfBoxWidth)
     for i in range(width):
@@ -148,12 +169,22 @@ def drawGrid():
 def textboxes():
     t2 = turtle.Turtle()
     t = turtle.Turtle()
+    t.color("White")
     t.speed(0)
     t.fd(8*boxWidth)
     t.rt(90)
+    t.fd(8*boxWidth)
+    t.rt(90)
+    t.fd(16*boxWidth)
+    t.rt(90)
+    t.fd(16*boxWidth)
+    t.rt(180)
+    t.fd(16*boxWidth)
+    t.lt(90)
+    t.fd(16*boxWidth)
     t.color("Grey")
     t.begin_fill()
-    t.fd(8*boxWidth)
+    t.rt(90)
     t.fd(6*boxWidth)
     t.rt(90)
     t.fd(16*boxWidth)
@@ -172,7 +203,7 @@ def textboxes():
    
     t.rt(90)
     t.fd(15)
-    t.color("Sky Blue")
+    t.color("White")
     t.ht()
     t2.fd(8*boxWidth)
     t2.rt(90)
@@ -195,9 +226,9 @@ def textboxes():
     t2.fd(15)
     t2.rt(90)
     t2.fd(15)
-    t2.color("Sky Blue")
+    t2.color("White")
     t2.ht()
-    t2.write("To Play The Game Type Something Random If You Want To\nSee Directions Type 'R'",font=("Arial", 16, "normal"))
+    t2.write("Hey Commander,You Just Infiltrated The Enemy B--ase and \nneed- to get out looks like the \ninternets going out but make sure you \ncome out alive and remember they have some pretty good tactics so dont \nunderestimate them. Godd Luck Make usre To \nuse the vehicles",font=("Impact", 16, "normal"))
     a=input()
     if a=="R":
         t3 = turtle.Turtle()
@@ -267,6 +298,3 @@ def storeMouseInput(x,y):
     tilex = int(math.ceil(x/boxWidth))
     tiley = int(math.floor(y/boxWidth))
     print([tilex,tiley])
-
-
-
